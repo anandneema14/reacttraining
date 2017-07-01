@@ -9,6 +9,19 @@ var nameReducer = (state = 'Anonymous', action) => {
       return state;
   };
 };
+
+var changeName=(name)=>{
+    return{
+        type:'CHANGE_NAME',
+        name
+    }
+};
+var changeHobby=(hobby)=>{
+    return{
+        type:'ADD_HOBBY',
+        hobby
+    }
+};
 var nextHobbyId = 1;
 var hobbiesReducer = (state = [], action) => {
   switch (action.type) {
@@ -53,10 +66,13 @@ var unsubscribe = store.subscribe(() => {
 var currentState = store.getState();
 console.log('currentState', currentState);
 
-store.dispatch({
-  type: 'CHANGE_NAME',
-  name: 'Andrew'
-});
+// store.dispatch({
+//   type: 'CHANGE_NAME',
+//   name: 'Andrew'
+// });
+
+store.dispatch(changeName('VAM'));
+store.dispatch(changeHobby(['Runnnn']));
 
 store.dispatch({
   type: 'ADD_HOBBY',

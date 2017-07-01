@@ -6,4 +6,4 @@ ReactDOM.render(
     document.getElementById('app')
 );
 
-require('./redux-demo3.jsx');
+require('./redux-examplemap.jsx');
