@@ -1,0 +1,34 @@
+module.exports={
+    entry:'./public/App/app.jsx',
+    output:{
+        path:__dirname,
+        filename:'./public/App/bundle.js'
+    },
+   resolve:{
+       root:__dirname,
+       alias:{
+           GR:'public/App/WeatherComponents/Weather.jsx',
+           GM:'public/App/WeatherComponents/WeatherData.jsx',
+           GF:'public/App/Weathercomponents/WeatherForm.jsx',
+           OpenWeather:'public/App/apicall/OpenWeatherMap.jsx',
+           About:'public/App/Component/AboutUs.jsx',
+           LocateUS:'public/App/Component/LocateUS.jsx',
+           Services:'public/App/Component/Services.jsx',
+           Main:'public/App/Component/Main.jsx',
+           NavBAR:'public/App/Component/NAVBar.jsx'
+       },
+       extensions:['','.js','.jsx']
+   },
+   module:{
+       loaders:[
+           {
+               loader:'babel-loader',
+               query:{
+                   presets:['react','es2015']
+               },
+               test:/\.jsx?$/,
+               exclude:/(node_modules|bower_components)/
+           }
+       ]
+   }
+};
